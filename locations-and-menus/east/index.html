@@ -1,0 +1,80 @@
+---
+layout: inner-page
+title: East
+description: The Oven East opened in 2008. Located in southeast Lincoln, Nebraska.
+seo_image:
+marquee_image: /assets/files/images/locations/theoven-east-inside.jpg
+marquee_document_path: /locations-and-menus/east/lunch
+marquee_document_title: Lunch Menu
+marquee_document_external: false
+marquee_document_path_two: /locations-and-menus/east/dinner
+marquee_document_title_two: Dinner Menu
+marquee_document_external_two: false
+restaurant_id_number: 3
+---
+{% assign location = site.restaurants | where: "restaurant_id_number", page.restaurant_id_number  | first %}
+<div class="is-spaced about about--inner-page">
+  <div class="about__container">
+    <div class="about__image" data-aos="fade-right" data-aos-duration="1500">
+      <img src="/uploads/theove-east.jpg" alt="">
+    </div>
+    <div class="container about__content" data-aos="fade-left" data-aos-duration="1500">
+      <div class="about__headline">The Oven East</div>
+      <div class="about__subhead">The Oven East opened in 2008. Located in southeast Lincoln, Nebraska.</div>
+      <div class="cards cards--single">
+        <div class="card card--{{ location.title }}">
+          <div class="card__item card__content">
+            <div class="card__address">
+              <a class="link" href="http://maps.google.com/?q={{ location.contact.address }}" target="_blank">{{ location.contact.address }}</a>
+            </div>
+            <div class="card__phone">
+              <a class="link" href="tel:+{{ location.contact.phone_href }}">{{ location.contact.phone }}</a>
+            </div>
+            <div class="card__hours card__hours--lunch">
+              <div class="card__hours__open-title">Lunch</div>
+              {% for lunch in location.lunch_hours %}
+                <div class="card__hours__open-times">
+                  <div class="card__hours__open-days">{{ lunch.days }}</div>
+                  <div class="card__hours__open-hours">{{ lunch.hours }}</div>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="card__hours card__hours--dinner">
+              <div class="card__hours__open-title">Dinner</div>
+              {% for dinner in location.dinner_hours %}
+                <div class="card__hours__open-times">
+                  <div class="card__hours__open-days">{{ dinner.days }}</div>
+                  <div class="card__hours__open-hours">{{ dinner.hours }}</div>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="card__links">
+              <div class="card__links__title">Menus</div>
+              <div class="card__links__wrapper">
+                {% for link in location.teaser_links %}
+                  {% if link.link_external %}
+                    <a class="link card__link" href="{{ link.link_url }}" target="_blank">{{ link.link_title }}</a>
+                  {% else %}
+                    <a class="link card__link" href="/{{ link.link_url }}">{{ link.link_title }}</a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+            <div class="card__other-link">
+              {% if location.reservation_url %}
+                <div class="card__link-to">
+                  <a href="{{ location.reservation_url }}" target="_blank" class="button button--black">Reserve a table </a>
+                </div>
+              {% endif %}
+              {% if location.delivery_url %}
+                <div class="card__link-to">
+                  <a href="{{ location.delivery_url }}" target="_blank" class="button button--black">Delivery</a>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

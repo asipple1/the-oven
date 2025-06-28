@@ -1,0 +1,30 @@
+{% if page.carousel %}
+  <div class="is-spaced home-carousel-section">
+    <div class="home-carousel-section__item home-carousel" data-aos="fade-right" data-aos-duration="1000">
+      <div class="container home-carousel__container">
+        <div class="home-carousel__item home-carousel__carousel">
+          <div class="swiper-wrapper home-carousel__wrapper">
+            {% for item in page.carousel %}
+              <div class="swiper-slide home-carousel__slide">
+                <div class="home-carousel__slide__image">
+                  <img src="{{ item.image }}" title="{{ item.title }}" alt="{{ item.title }}">
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="home-carousel__pagination"></div>
+    </div>
+    <div class="home-carousel-section__item home-carousel-section__callout" data-aos="fade-left" data-aos-duration="1500">
+        <div class="container home-carousel-section__callout__container">
+          <div class="home-carousel-section__callout__content">
+              <p class="home-carousel-section__callout__content__meta-title">From The Oven</p>
+              <div class="home-carousel-section__callout__content__headline">Gift Cards</div>
+              <p  class="home-carousel-section__callout__content__description">Buy The Oven gift card for your friends and family!</p>
+              <a href="/gift-cards" class="button-box button-box--black">Order Now</a>
+          </div>
+        </div>
+    </div>
+  </div>
+{% endif %}

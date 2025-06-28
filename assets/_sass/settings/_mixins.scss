@@ -1,0 +1,81 @@
+/* --------------------------
+ * BREAK POINTS
+ * -------------------------- */
+
+ @mixin respond-to($media) {
+  @if $media == smartphone-portrait {
+      @media (max-width : 400px) { @content; }
+  }
+  @else if $media == smartphone {
+      @media (max-width : 600px) { @content; }
+  }
+  @else if $media == tablet-portrait {
+      @media (max-width : 768px) { @content; }
+  }
+  @else if $media == tablet {
+      @media (max-width : 1070px) { @content; }
+  }
+  @else if $media == desktop {
+      @media (min-width: 1071px) { @content; }
+  }
+  @else if $media == large-desktop {
+      @media (min-width: 1600px) { @content; }
+  }
+  @else if $media == retina {
+      @media (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) { @content; }
+  }
+  @else if $media == ie {
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { @content; }
+  }
+  @else {
+      @media (max-width: $media) { @content; }
+  }
+}
+
+
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+ 
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+ 
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+   
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+ 
+  @if $fallback {
+    font-size: $fallback;
+  }
+ 
+  font-size: $responsive;
+}
+
+/* Equal-column flex grid with gutter support */
+@mixin flex-column($repeat, $gutter-horizontal: 0, $gutter-vertical: 0) {
+  // Don't add complexity if not subtracting anything
+ $gutter-subtract: ($gutter-horizontal - $gutter-horizontal * 1 / $repeat);
+ @if unitless($gutter-horizontal) and $gutter-horizontal == 0 {
+   $gutter-subtract: 1px / $repeat;
+ }
+ 
+ flex: 0 0 calc(99.9% * 1 / #{$repeat} - #{$gutter-subtract});
+ flex-basis: auto;
+ flex-grow: 0;
+ flex-shrink: 0;
+ width: calc(99.9% * 1 / #{$repeat} - #{$gutter-subtract});
+ 
+ &:nth-of-type(n) {
+   margin-right: $gutter-horizontal;
+   margin-bottom: $gutter-vertical;
+ }
+ &:nth-of-type(#{$repeat}n) {
+   margin-right: 0;
+ }
+}

@@ -1,0 +1,59 @@
+---
+layout: default
+title: home-page
+marquee_image: /uploads/chtmak-bg.jpg
+about_image: /uploads/food-photo.jpg
+carousel:
+  - image: /uploads/dsc09524.jpg
+    title: Chicken Tikka Madras
+  - image: /assets/files/images/food/cht-madras.jpeg
+    title: Chicken Tikka Madras
+  - image: /assets/files/images/food/soup.jpeg
+    title: Mulligatawny Soup
+  - image: /uploads/dsc09439.jpg
+    title:
+  - image: /uploads/dsc09527.jpg
+    title:
+  - image: /uploads/dsc09441.jpg
+    title:
+  - image: /uploads/dsc09372.jpg
+    title:
+---
+
+<div class="home-hero">
+  <div class="home-hero__image" style="background-image: url({{ page.marquee_image }});"></div>
+  <div class="container home-hero__content">
+    <div class="animated rellax fadeInUp home-hero__headline home-hero__headline--second" data-rellax-speed="-1" data-rellax-percentage="0.5">The Oven</div>
+    <div class="rellax home-hero__links" data-rellax-speed="-2">
+      <div class="home-hero__link-wrapper">
+          <a href="/locations-and-menus/haymarket" class="animated fadeInUp button home-hero__button">Haymarket</a>
+      </div>
+      <div class="home-hero__link-wrapper">
+          <a href="/locations-and-menus/cellar" class="animated fadeInUp button home-hero__button">Cellar</a>
+        </div>
+      <div class="home-hero__link-wrapper">
+        <a href="/locations-and-menus/east" class="animated fadeInUp button home-hero__button">East</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="about" class="is-spaced about">
+  <div class="about__container">
+    <div class="about__image" data-aos="fade-right" data-aos-duration="1500">
+      <img alt="Spices" title="Spices" src="{{ page.about_image }}" />
+    </div>
+    <div class="container about__content" data-aos="fade-left" data-aos-duration="1500">
+      <div class="editable about__headline">About</div>
+      <div class="editable about__subhead">The Oven Restaurants are proudly owned/operated by a dedicated family of chefs who have been creating Indian cuisine for over twenty seven years. The Oven Restaurants specialize in Northern Indian Cuisine which is known for its rich colors, flavor profiles and unique style of cooking. Whether you enjoy our original <a href="/locations-and-menus/haymarket" class="link">Haymarket</a>  location, founded in 1988, complemented by the relaxed vibe of <a href="/locations-and-menus/cellar" class="link">The Cellar</a>, the beautiful sunsets and outdoor patio of <a href="/locations-and-menus/east" class="link">The Oven East</a>, we welcome you to join us, and enjoy the culture and cuisine of India.
+      </div>
+    </div>
+  </div>
+</div>
+{% include carousel.html %}
+<div class="is-spaced home-callouts">
+  <div class="container home-callouts__intro">
+    <div class="editable home-callouts__headline" data-aos="fade-right" data-aos-duration="1000">
+    </div>
+  </div>
+  {% include restaurant-cards.html %}
+</div>

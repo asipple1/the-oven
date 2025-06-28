@@ -1,0 +1,21 @@
+.gallery-section {
+  &__container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  a {
+    @include flex-column(4, 5px, 5px);
+    @include respond-to(tablet-portrait) {
+      @include flex-column(3, 5px, 5px);
+    }
+    @include respond-to(smartphone) {
+      @include flex-column(2, 5px, 5px);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: 250px;
+    }
+  }
+}

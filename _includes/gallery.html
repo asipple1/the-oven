@@ -1,0 +1,11 @@
+{% if page.gallery %}
+  <div class="is-spaced gallery-section">
+    <div class="container gallery-section__container gallery">
+      {% for item in page.gallery %}
+       <a href="{{ item.image }}" data-caption="{{ item.title }}">
+         <img src="{{ item.image }}" alt="{{ item.title }}">
+       </a>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

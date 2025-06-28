@@ -1,0 +1,45 @@
+.announcement {
+  background-color: #800020;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+  text-align: center;
+  overflow: hidden;
+  padding: 12px;
+  transition: .4s;
+  &--unstick{
+    position: relative;
+  }
+  &__contrainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__headline {
+    color: $color-white;
+    font-size: 20px;
+    @include respond-to(tablet-portrait) {
+      font-size: 14px;
+    }
+  }
+  &__description {
+    color: $color-white;
+    font-size: 18px;
+  }
+  &__buttons-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  &__button-wrapper {
+    margin-right: 40px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+  }
+  &__button {
+  }
+}

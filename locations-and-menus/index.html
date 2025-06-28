@@ -1,0 +1,29 @@
+---
+layout: inner-page
+title: Locations & Menus
+description: The Oven Locations and Menus
+seo_image: /assets/files/images/locations/DSC08308.jpg
+marquee_image: /assets/files/images/locations/DSC08308.jpg
+marquee_document_path: /locations-and-menus/lunch/
+marquee_document_title: Lunch Menu
+marquee_document_external: false
+marquee_document_path_two: /locations-and-menus/dinner/
+marquee_document_title_two: Dinner Menu
+marquee_document_external_two: false
+redirect_from:
+- /locations
+---
+<div class="scroll-links">
+  {% assign restaurants = site.restaurants | sort: 'restaurant_id_number' %}
+  <div class="container">
+    {% for location in restaurants %}
+    {% if location.disabled %}
+    {% else %}
+    <a href="#{{location.title|downcase}}" class="link link--{{location.name}}">The Oven {{ location.title }}</a>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+<div class="location-callouts">
+  {% include restaurant-cards-big.html %}
+</div>

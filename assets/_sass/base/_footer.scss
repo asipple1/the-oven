@@ -1,0 +1,110 @@
+.footer {
+  position: relative;
+  min-height: 100px;
+  background-color: $color-black;
+  @include respond-to(tablet-portrait) {
+    top: 65px;
+  }
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: $color-white;
+    @include respond-to(tablet-portrait) {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    @include flex-column(3, $space-horizontal-large, $space-horizontal-large);
+    @include respond-to(tablet-portrait) {
+      @include flex-column(1, 25px, 25px);
+    }
+  }
+  // Logo
+  &__middle {
+    text-align: center;
+    @include respond-to(tablet-portrait) {
+      order: 1;
+      margin-bottom: 20px;
+    }
+  }
+  &__logo {
+    width: 100%;
+    svg {
+      fill: $color-white;
+      width: 120px;
+      transition: .4s;
+    }
+  }
+  // Location Links
+  &__link-wrapper {
+    margin-bottom: 8px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  &__link {
+    color: $color-white;
+  }
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    @include respond-to(tablet-portrait) {
+      flex-direction: column;
+      order: 2;
+      margin-bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
+    .footer__link {
+      color: $color-white;
+      &:hover {
+        color: $color-white;;
+      }
+    }
+  }
+  // Social
+  &__social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    @include respond-to(tablet-portrait) {
+      order: 3;
+      margin-top: 20px;
+    }
+  }
+  &__soical-link {
+    padding: 0 20px;
+    svg {
+      width: 40px;
+      transition: .4s;
+      fill: $color-white;
+    }
+    &--facebook {
+      &:hover {
+        svg {
+          fill: #3B5998;
+        }
+      }
+    }
+    &--instagram {
+      &:hover {
+        svg {
+          fill: #E4405F;
+        }
+      }
+    }
+    &--twitter {
+      &:hover {
+        svg {
+          fill: #74b9ff;
+        }
+      }
+    }
+  }
+}

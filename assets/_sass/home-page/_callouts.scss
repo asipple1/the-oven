@@ -1,0 +1,11 @@
+.home-callouts {
+  &__headline {
+    @include responsive-font(5vw, 35px, 50px);
+    font-family: $font-heading;
+    margin-bottom: 40px;
+    text-align: left;
+    @include respond-to(tablet-portrait) {
+      margin-bottom: 20px;
+    }
+  }
+}

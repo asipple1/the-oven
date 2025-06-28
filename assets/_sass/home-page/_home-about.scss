@@ -1,0 +1,60 @@
+.about {
+  overflow: hidden;
+  &__container {
+    display: flex;
+    flex-direction: row;
+    @include respond-to(tablet) {
+      flex-direction: column;
+    }
+  }
+  &__image {
+    position: relative;
+    width: 55%;
+    margin-right: 60px;
+    @include respond-to(tablet-portrait) {
+      display: none;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include respond-to(tablet) {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: calc(100% - 55% - 60px);
+    padding-left: 0;
+    @include respond-to(tablet) {
+      width: 100%;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+  &__headline {
+    @include responsive-font(5vw, 35px, 50px);
+    font-family: $font-heading;
+    text-transform: uppercase;
+  }
+  &__subhead {
+    @include responsive-font(5vw, 15px, 22px);
+    line-height: 2em;
+    &--hide-mobile {
+      @include respond-to(tablet-portrait) {
+        display: none;
+      }
+    }
+  }
+  &--inner-page {
+    .about__image {
+      @include respond-to(tablet-portrait) {
+        display: none;
+      }
+    }
+  }
+}

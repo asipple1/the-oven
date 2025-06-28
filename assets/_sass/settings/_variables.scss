@@ -1,0 +1,97 @@
+/* --------------------------
+* SET UP FONT VARIABLES
+* -------------------------- */
+
+@font-face {
+  font-family: 'HKGrotesk';
+  src: url("/assets/files/fonts/HKGrotesk/WEB/HKGrotesk-Medium.eot") format('eot'),
+  url("/assets/files/fonts/HKGrotesk/WEB/HKGrotesk-Medium.woff") format('woff'),
+  url("/assets/files/fonts/HKGrotesk/WEB/HKGrotesk-Medium.woff2") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HKGrotesk-regular';
+  src: url("/assets/files/fonts/HKGrotesk/WEB/HKGrotesk-Regular.eot") format('eot'),
+  url("/assets/files/fonts/HKGrotesk/WEB/HKGrotesk-Regular.woff") format('woff'),
+  url("/assets/files/fonts/HKGrotesk/WEB/HKGrotesk-Regular.woff2") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HKGrotesk-bold';
+  src: url("/assets/files/fonts/HKGrotesk/WEB/HKGrotesk-Bold.eot") format('eot'),
+  url("/assets/files/fonts/HKGrotesk/WEB/HKGrotesk-Bold.woff") format('woff'),
+  url("/assets/files/fonts/HKGrotesk/WEB/HKGrotesk-Bold.woff2") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HKGrotesk-light';
+  src: url("/assets/files/fonts/HKGrotesk/WEB/HKGrotesk-Light.eot") format('eot'),
+  url("/assets/files/fonts/HKGrotesk/WEB/HKGrotesk-Light.woff") format('woff'),
+  url("/assets/files/fonts/HKGrotesk/WEB/HKGrotesk-Light.woff2") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HKGrotesk-Italic';
+  src: url("/assets/files/fonts/HKGrotesk/WEB/HKGrotesk-Italic.eot") format('eot'),
+  url("/assets/files/fonts/HKGrotesk/WEB/HKGrotesk-Italic.woff") format('woff'),
+  url("/assets/files/fonts/HKGrotesk/WEB/HKGrotesk-Italic.woff2") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vivaldiitalic';
+  src: url('/assets/files/fonts/vivaldii/vivaldii-webfont.eot');
+  src: url('/assets/files/fonts/vivaldii/vivaldii-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/assets/files/fonts/vivaldii/vivaldii-webfont.woff') format('woff'),
+       url('/assets/files/fonts/vivaldii/vivaldii-webfont.ttf') format('truetype'),
+       url('/assets/files/fonts/vivaldii/vivaldii-webfont.svg#vivaldiitalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+$font-heading: 'HKGrotesk', sans-serif;
+$font-oven: 'vivaldiitalic';
+$font-body: 'HKGrotesk-light', sans-serif;
+$font-italic: 'HKGrotesk-Italic';
+
+
+/* --------------------------
+* TYPOGRAPHIC SCALE
+* https://blog.envylabs.com/responsive-typographic-scales-in-css-b9f60431d1c4
+* http://spencermortensen.com/articles/typographic-scale/
+* https://codepen.io/dangodev/pen/OOaYya
+* http://www.modularscale.com/?18&px&1.125
+* -------------------------- */
+
+// Pentatonic Scale
+$--step-up-5: 45px;
+$--step-up-4: 40px;
+$--step-up-3: 35px;
+$--step-up-2: 32px;
+$--step-up-1: 30px;
+$--baseline: 18px;
+$--step-down-1: 30px;
+$--step-down-2: 28px;
+$--step-down-3: 25px;
+$--step-down-4: 20px;
+$--step-down-5: 15px;
+
+$color-white: #fff;
+$color-black: #040404;
+$color-accent: #D17D74;
+$color-accent-hover: #DF6712;
+
+$space-horizontal-large: 30px;
+$space-horizontal-medium: 20px;
+$space-horizontal-small: 10px;

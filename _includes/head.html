@@ -1,0 +1,77 @@
+<head>
+  <meta charset="utf-8">
+  <title>{{ site.title }} | {{ page.title }}</title>
+  <meta name="robots" content="index, follow">
+  {% if page.title %}
+    <meta name="title" content="{{ page.title }}">
+  {% else %}
+    <meta name="title" content="{{ site.title }}">
+  {% endif %}
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}">
+  {% else %}
+  <meta name="description" content="{{ site.description }}">
+  {% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="The Oven, Indian food, Indian, Oven, Haymarket, Himalayas, Cellar, Old Market, Eastern food, Naan, Curry, Wine, Madras, Chicken Tikka, Lincoln, Omaha, Nebraska, Tandoor, Wine, Spectator"/>
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="The Oven" />
+  <!-- facebook meta -->
+  <meta property="og:type" content="{{site.social.facebook.type}}" /> 
+  {% if page.title %}
+  <meta property="og:title" content="{{ page.title }}">
+  {% else %}
+     <meta property="og:title" content="{{ site.social.facebook.title }}">
+  {% endif %}
+  {% if page.description %}
+  <meta property="og:description" content="{{ page.description }}">
+  {% else %}
+  <meta property="og:description" content="{{ site.social.facebook.description }}">
+  {% endif %}
+  <meta property="og:url" content="{{ site.url }}{{page.url
+
+}}">
+  {% if page.seo_image %}
+    <meta property="og:image" content="{{site.url}}{{page.seo_image}}">
+  {% else %}
+    <meta property="og:image" content="{{site.url}}{{site.social.facebook.img}}">
+  {% endif %}
+  <!-- Twitter meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="{{site.social.twitter.site}}">
+  <meta name="twitter:title" content="{{site.social.twitter.title}}">
+  <meta name="twitter:description" content="{{site.social.twitter.description}}">
+  {% if page.seo_image %}
+    <meta name="twitter:image" content="{{ site.url }}{{ page.teaser_image }}">
+  {% else %}
+    <meta name="twitter:image" content="{{ site.url }}{{ site.social.twitter.img }}">
+  {% endif %}
+  <link rel="icon" type="image/png" href="/assets/files/images/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/assets/files/images/favicon-16x16.png" sizes="16x16" />
+  <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+    /* IE11 */
+    @media all and (-ms-high-contrast:none)
+    {
+        *::-ms-backdrop,
+        [data-aos^=fade][data-aos^=fade],[data-aos^=zoom][data-aos^=zoom] {
+            opacity: 1;
+        }
+    }
+    _::-webkit-full-page-media, _:future, :root .safari_only, [data-aos^=fade][data-aos^=fade],[data-aos^=zoom][data-aos^=zoom] {
+        opacity: 1;
+    }
+    
+    </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67754919-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'UA-67754919-1');
+  </script>
+
+</head>

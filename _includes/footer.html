@@ -1,0 +1,44 @@
+<footer class="is-spaced footer">
+  {% if site.data.announcements.enabled %}
+    <div class="announcement announcement--sticky">
+      <div class="container announcement__container">
+          <div class="announcement__content">
+            <div class="announcement__headline">{{ site.data.announcements.title }}</div>
+           <div class="p announcement__description"></div>
+          </div>
+          <!--<div class="announcement__buttons-group">-->
+          <!--  <div class="announcement__button-wrapper">-->
+          <!--    <a class="button announcement__button" href="/takeout-curbside-pickup" target="_self">Learn More</a>-->
+          <!--  </div>-->
+          <!--</div>-->
+      </div>
+    </div>
+  {% endif %}
+  <div class="container footer__container">
+    <div class="footer__item footer__nav">
+      <div class="footer__link-wrapper">
+        <a href="/locations-and-menus/haymarket" class="button footer__link">Haymarket</a>
+      </div>
+      <div class="footer__link-wrapper">
+        <a href="/locations-and-menus/cellar" class="button footer__link">Cellar</a>
+      </div>
+      <div class="footer__link-wrapper">
+        <a href="/locations-and-menus/east" class="button footer__link">East</a>
+      </div>
+    </div>
+    <div class="footer__item footer__middle">
+        <a class="footer__logo" href="/">{% include logo.svg %}</a>
+    </div>  
+    <div class="footer__item footer__social">
+      <a href="https://www.facebook.com/the.oven.indian.cuisine/" target="_blank" class="footer__soical-link footer__soical-link--facebook">
+        {% include icons/facebook.svg %}
+      </a>
+      <a href="https://www.instagram.com/theoven_ne/" target="_blank" class="footer__soical-link footer__soical-link--instagram">
+        {% include icons/instagram.svg %}
+      </a>
+      <a href="https://twitter.com/TheOven_NE" target="_blank" class="footer__soical-link footer__soical-link--twitter">
+        {% include icons/twitter.svg %}
+      </a>
+    </div>
+  </div>
+</footer>

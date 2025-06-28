@@ -1,0 +1,50 @@
+.menu {
+  &__wrapper {
+
+  }
+  &__section {
+    &__details {
+      margin-bottom: 20px;
+      padding: 20px 0 5px;
+      border-bottom: 1px solid #d6d6d6;
+    }
+    &__name {
+
+    }
+    &__content {
+      font-size: 12px;
+      font-family: $font-italic;
+    }
+    // Menu Items
+    &__items {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      &__item {
+        @include flex-column(3, 20px, 20px);
+        @include respond-to(tablet-portrait) {
+          @include flex-column(2, 20px, 20px);
+        }
+        @include respond-to(smartphone) {
+          @include flex-column(1, 20px, 20px);
+        }
+        &__name-price {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          font-size: 16px;
+          margin-bottom: 5px;
+          .name {
+
+          }
+          .price {
+
+          }
+        }
+        &__description {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

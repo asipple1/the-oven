@@ -1,0 +1,15 @@
+.notifcation {
+  background-color: #f87e00;
+  padding: 10px;
+  position: relative;
+  z-index: 2000;
+  &__container {
+    text-align: center;
+    color: $color-white;
+    .h6 {
+      @include respond-to(tablet-portrait) {
+        font-size: 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,225 @@
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: left;
+  &--big {
+    .card {
+      @include flex-column(1, $space-horizontal-large, $space-horizontal-large);
+      display: flex;
+      flex-flow: row;
+      justify-content: flex-start;
+      flex-direction: row;
+      @include respond-to(tablet-portrait) {
+        flex-direction: column;
+      }
+      &:nth-of-type(even) {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        @include respond-to(tablet-portrait) {
+          flex-direction: column;
+          justify-content: flex-start;
+        }
+      }
+      &__image {
+        height: 450px;
+        @include respond-to(tablet) {
+          height: 350px;
+        }
+        @include respond-to(tablet-portrait) {
+          height: 250px;
+        }
+      }
+      &__item {
+        @include flex-column(2, $space-horizontal-large, $space-horizontal-large);
+        @include respond-to(tablet-portrait) {
+          flex: none;
+          width: 100%;
+          margin-bottom: 0 !important;
+          margin-right: 0 !important;
+        }
+      }
+      &__headline {
+        @include respond-to(tablet-portrait) {
+          margin-top: 10px;
+        }
+      }
+      &__links {
+        margin-bottom: 20px;
+      }
+      &__other-link {
+        display: flex;
+        flex-direction: row;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        @include respond-to(tablet-portrait) {
+          flex-direction: column;
+          .card__link-to {
+            margin-right: 0;
+            margin-bottom: 10px;
+            a {
+              width: 100%;
+            }
+          }
+        }
+      }
+      &__link-to {
+        margin-bottom: 20px;
+        margin-right: 20px;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  &--single {
+    margin-top: 20px;
+    .card {
+      flex: none;
+      width: 100%;
+      font-size: 16px;
+
+      &__address {
+        margin-bottom: 14px;
+        font-size: 16px;
+      }
+      &__phone {
+        margin-bottom: 14px;
+        font-size: 16px;
+      }
+
+      &__hours {
+        &__open-title {
+          margin-bottom: 14px;
+          font-size: 16px;
+          @include respond-to(smartphone) {
+            font-size: 16px;
+          }
+        }
+      }
+      &__links {
+        &__title {
+          font-weight: bold;
+          margin-bottom: 14px;
+        }
+        &__wrapper {
+          margin-bottom: 14px;
+        }
+      }
+    }
+  }
+}
+.card {
+  @include flex-column(3, $space-horizontal-large, $space-horizontal-large);
+  @include respond-to(tablet) {
+    @include flex-column(1, 25px, 25px);
+  }
+  @include respond-to(smartphone) {
+    @include flex-column(1, 25px, 25px);
+  }
+  &__image {
+    display: block;
+    margin-bottom: 10px;
+    height: 280px;
+    overflow: hidden;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1);
+      transition: .6s ease-in-out;
+    }
+    &:hover {
+      img {
+        transform: scale(1.2);
+      }
+    }
+  }
+  &__headline {
+    margin-bottom: 8px;
+    font-size: 30px;
+    &__one {
+      font-weight: bold;
+    }
+  }
+  &__headline-bold {
+    font-family: 'HKGrotesk-bold';
+  }
+  &__address {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    a {
+      font-size: 14px;
+      text-align: left;
+      @include respond-to(smartphone) {
+        font-size: 12px;
+      }
+    }
+  }
+  &__phone {
+    display: block;
+    margin-bottom: 14px;
+    a {
+      font-size: 14px;
+      text-align: left;
+      @include respond-to(smartphone) {
+        font-size: 12px;
+      }
+    }
+  }
+  &__hours {
+    margin-bottom: 8px;
+    &__open-title {
+      font-family: 'HKGrotesk-bold';
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    &__open-times {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      font-size: 16px;
+      font-family: 'HKGrotesk-regular';
+    }
+    
+  }
+  &__links {
+    &__title {
+      font-family: 'HKGrotesk-bold';
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    &__wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+    .link {
+      margin-right: 20px;
+    }
+  }
+  &__link-to {
+    margin-bottom: 20px;
+    margin-right: 20px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  &__other-link {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    @include respond-to(tablet-portrait) {
+      flex-direction: column;
+      .card__link-to {
+        margin-right: 0;
+        margin-bottom: 10px;
+        a {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

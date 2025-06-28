@@ -1,0 +1,43 @@
+---
+layout: default
+---
+{% include page-marquee.html %}
+{% assign location = site.restaurants | where: "restaurant_id_number", page.restaurant_id_number  | first %}
+<div class="container is-spaced menu-quick-links">
+  <ul class="menu-quick-links__wrapper">
+    {% for section in location.dinner_menu %}
+      <li><a href="#{{ section.name | slugify }}" class="button button--black">{{ section.name }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+<div class="menu">
+  <div class="container menu__wrapper">
+  {% for section in location.dinner_menu %}
+    <div id="{{ section.name | slugify  }}"class="menu__section" data-aos="fade-up" data-aos-duration="2000">
+      <div class="menu__section__details">
+        <div class="h4 menu__section__name">{{ section.name }}</div>
+        {% if section.details %}
+          <div class="menu__section__content">{{ section.details }}</div>
+        {% endif %}
+      </div>
+      <div class="menu__section__items">
+          {% for item in section.items %}
+            <div class="menu__section__items__item">
+              <div class="menu__section__items__item__name-price">
+                <div class="item-name">
+                    {{ item.name }}
+                </div>
+                {% if page.hide_price != true %}
+                  <div class="item-price">
+                    {{ item.price_number }}
+                  </div>
+                {% endif %}
+              </div>
+              <div class="menu__section__items__item__description">{{ item.description }}</div>
+            </div>
+          {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,35 @@
+.scroll-links {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @include respond-to(tablet-portrait) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    font-size: 25px;
+    @include respond-to(tablet) {
+      font-size: 20px;
+    }
+    @include respond-to(tablet-portrait) {
+      font-size: 15px;
+    }
+    .link {
+      display: inline-block;
+      text-align: center;
+      @include respond-to(tablet-portrait) {
+        @include flex-column(1, 10px, 10px);
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+      @include respond-to(smartphone-portrait) {
+        @include flex-column(1, 10px, 10px);
+      }
+    }
+  }
+}

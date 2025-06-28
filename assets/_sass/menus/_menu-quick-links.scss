@@ -1,0 +1,22 @@
+.menu-quick-links {
+  margin-bottom: 20px;
+  margin-top: 40px;
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+    text-align: center;
+    li {
+      padding: 2px;
+      flex: auto;
+      @include respond-to(tablet-portrait) {
+        width: 50%;
+      }
+      a {
+        font-size: 11px;
+        line-height: 1;
+      }
+    }
+  }
+}

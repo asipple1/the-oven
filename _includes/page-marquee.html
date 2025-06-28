@@ -1,0 +1,15 @@
+<div class="marquee marquee--inner marquee--{{ page.title | downcase }}">
+  <div class="marquee__image" style="background-image: url({{ page.marquee_image }});"></div>
+  <div class="container marquee__content">
+    <div class="h2 animated fadeInUp marquee__headline">{{ page.title }}</div>
+    {% if page.subhead %}
+      <div class="h6 animated fadeInUp marquee__subhead">{{ page.subhead }}</div>
+    {% endif %}
+    {% if page.marquee_document_path %}
+      <a href="{{ page.marquee_document_path }}" {% if page.marquee_document_external %} target="_blank" {% else %} target="_self" {% endif %} class="animated fadeInUp button marquee__button">{{ page.marquee_document_title }}</a>
+    {% endif %}
+    {% if page.marquee_document_path_two %}
+      <a href="{{ page.marquee_document_path_two }}" {% if page.marquee_document_external_two %} target="_blank" {% else %} target="_self" {% endif %} class="animated fadeInUp button marquee__button">{{ page.marquee_document_title_two }}</a>
+    {% endif %}
+  </div>
+</div>

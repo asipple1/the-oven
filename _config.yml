@@ -1,0 +1,57 @@
+title: The Oven
+email: your-email@example.com
+description: 'The Oven Restaurants specialize in Northern Indian Cuisine. We have been honored Ten years in a row with the prestigious Wine Spectator Magazine’s Best Award of Excellence' 
+baseurl:  
+url: "https://theoven-lincoln.com" 
+# Build settings
+markdown: kramdown
+theme: minima
+permalink: pretty
+port: 4444
+
+###################################################
+#                    COLLECTIONS                  #
+###################################################
+
+collections:
+  restaurants:
+    output: false
+    permalink: /locations-and-menus/:name
+    _hide_content: true
+
+#--- Social meta
+social:
+  facebook:
+    title: The Oven
+    description: The Oven Restaurants specialize in Northern Indian Cuisine. We have been honored Ten years in a row with the prestigious Wine Spectator Magazine’s Best Award of Excellence
+    type: restaurant.restaurant
+    img: /uploads/chtmak-bg.jpg
+    author: https://www.facebook.com/the.oven.indian.cuisine?fref=ts
+#--- Twitter meta
+  twitter:
+    site: "@theoven2"
+    title: The Oven
+    description: The Oven Restaurants specialize in Northern Indian Cuisine. We have been honored Ten years in a row with the prestigious Wine Spectator Magazine’s Best Award of Excellence.
+    img: /uploads/chtmak-bg.jpg
+
+
+
+plugins:
+  - jekyll-feed
+  - jekyll-redirect-from
+
+exclude:
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - _sass
+  - .git
+  - .sass-cache
+  - assets/_js
+  - assets/_sass
+  - webpack.config.js
+  - webpack-settings.config.js
+  - postcss.config.js
+  - .bablerc

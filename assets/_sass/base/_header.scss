@@ -1,0 +1,215 @@
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  transition: .3s ease-in-out;
+  z-index: 100;
+  @include respond-to(tablet-portrait) {
+    position: fixed;
+    background-color: $color-white;
+  }
+  &__nav-mobile {
+    display: none;
+    @include respond-to(tablet) {
+      display: block;
+    }
+  }
+  &__nav-desktop {
+    display: block;
+    margin-left: auto;
+    &__link {
+      // body.page-home-page & {
+      //   color: $color-black;
+      // }
+      position: relative;
+      margin-right: 20px;
+      font-size: 18px;
+      color: $color-white;
+      transition: .5s;
+      text-transform: uppercase;
+      &:last-of-type {
+        margin-right: 0;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background-color: $color-white;
+        transition: .4s;
+      }
+      &:hover {
+        color: $color-white;
+        &:before {
+          width: 100%;
+          background-color: $color-white;
+        }
+      }
+    }
+    @include respond-to(tablet) {
+      display: none;
+    }
+  }
+  &--active {
+    z-index: 2000;
+    .header__logo {
+      svg {
+        fill: $color-black !important;
+      }
+    }
+  }
+  &--fixed {
+    position: fixed;
+    background-color: rgba($color-white, .8);
+    .header__logo {
+      .logo {
+        &--main {
+          display: none;
+        }
+        &--secondary {
+          display: block;
+          fill: black;
+        }
+      }
+    }
+    .header__nav-desktop {
+      &__link {
+        color: $color-black;
+      }
+    }
+    .header__menu {
+      &__icon {
+        background-color: $color-black;
+      }
+      &:before, &:after {
+        background-color: $color-black;
+      }
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 25px 50px;
+    @include respond-to(tablet-portrait) {
+      padding: 10px 20px;
+    }
+  }
+  &__logo {
+    transition: .5s;
+    .logo {
+      fill: $color-white;
+      transition: .4s;
+      &--main {
+        display: block;
+        height: 100px;
+        width: 100px;
+        @include respond-to(tablet-portrait) {
+          display: none;
+        }
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      &--secondary {
+        display: none;
+        height: 50px;
+        @include respond-to(tablet-portrait) {
+          fill: $color-black;
+          display: block;
+        }
+        svg {
+          height: 100%;
+        }
+      }
+    }
+  }
+  &__menu {
+    position: relative;
+    width: 40px;
+    height: 18px;
+    margin-left: auto;
+    &__icon {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: 2px;
+      margin-top: -1px;
+      margin-bottom: -1px;
+      background-color: $color-white;
+      transition: 0.3s ease-in-out;
+      @include respond-to(tablet-portrait) {
+        background-color: $color-black;
+      }
+    }
+    &:before, &:after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $color-white;
+      transition: 0.3s ease-in-out;
+      @include respond-to(tablet-portrait) {
+        background-color: $color-black;
+      }
+    }
+    
+    &:before {
+      top: 0;
+    }
+  
+    &:after {
+      bottom: 0;
+    }
+
+
+    &--active {
+      z-index: 2000;
+      .header__menu__icon {
+        opacity: 0;
+      }
+      
+      &:before, &:after {
+        top: 50%;
+        width: 100%;
+        margin-top: -1px;
+        transform-origin: center center;
+        background-color: $color-black;
+      }
+      
+      &:before {
+        transform: rotate(45deg);
+      }
+      
+      &:after {
+        transform: rotate(-45deg);
+      }
+      
+      &:hover {
+        &:before {
+          transform: rotate(-45deg);
+        }
+  
+        &:after {
+          transform: rotate(45deg);
+        }
+      }
+    }
+    &:hover {
+      .header__menu__icon {
+        background-color: $color-black;
+      }
+      &:before, &:after {
+        background-color: $color-black;
+      }
+    }
+  }
+}

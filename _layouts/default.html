@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body class="page-{{ page.title | slugify }}">
+  <header class="header">
+    <div class="container header__container">
+        <a href="/" class="header__logo">
+          {% include logo.svg %}
+          {% include logo-no-border.svg %}
+        </a>
+        <nav class="header__nav-desktop">
+            <a href="/about" class="header__nav-desktop__link">About</a>
+            <a href="/gift-cards" class="header__nav-desktop__link">Gift Card</a>
+            <a href="/gallery" class="header__nav-desktop__link">Gallery</a>
+            <a href="/locations-and-menus" class="header__nav-desktop__link">Locations &amp; Menus</a>
+            <a href="/wine-club" class="header__nav-desktop__link">Wine Club</a> 
+        </nav>
+        <a href="#" id="menu-button" class="header__nav-mobile header__menu">
+          <span class="header__menu__icon"></span>
+        </a>
+    </div>
+  </header>
+  <div class="menu-overlay">
+    <div class="container menu-overlay__inner">
+      <div class="menu-overlay__links">
+        <a href="/about" class="menu-overlay__link">About</a>
+        <a href="/gift-cards" class="menu-overlay__link">Gift Card</a>
+        <a href="/gallery" class="menu-overlay__link">Gallery</a>
+        <a href="/locations-and-menus" class="menu-overlay__link">Locations &amp; Menus</a> 
+        <a href="/wine-club" class="menu-overlay__link">Wine Club</a>  
+      </div>
+      <div class="menu-overlay__social">
+          <a href="https://www.facebook.com/the.oven.indian.cuisine/" target="_blank" class="menu-overlay__soical-link menu-overlay__soical-link--facebook">{% include icons/facebook.svg %}</a>
+          <a href="https://www.instagram.com/theoven_ne/" target="_blank" class="menu-overlay__soical-link menu-overlay__soical-link--instagram">{% include icons/instagram.svg %}</a>
+          <a href="https://twitter.com/TheOven_NE" target="_blank" class="menu-overlay__soical-link menu-overlay__soical-link--twitter">
+            {% include icons/twitter.svg %}
+          </a>
+      </div>
+    </div>
+  </div>
+  <div id="main" class='main-content'>
+    {{content}}
+  </div>
+  {% include footer.html %}
+</body>
+<!-- Javascript -->
+<script type="text/javascript" src="/assets/js/vendor.bundle.js"></script>
+<script type="text/javascript" src="/assets/js/main.bundle.js"></script>

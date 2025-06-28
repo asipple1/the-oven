@@ -1,0 +1,49 @@
+<div class="container cards" data-aos="fade-up" data-aos-duration="1000">
+  {% assign restaurants = site.restaurants | sort: 'restaurant_id_number' %}
+  {% for location in restaurants %}
+    {% if location.restaurant_id_number == 1 or location.restaurant_id_number == 2 or location.restaurant_id_number == 3 %}
+    <div class="card card--{{ location.title }}">
+      <a class="card__image" href="{{ location.url }}">
+        <img src="{{ location.teaser_image }}" alt="{{ location.name }}" style="min-height: 235px;">
+      </a>
+      <div class="card__content">
+        <a class="card__headline" href="{{ location.url }}"><span class="card__headline__two"><span class="card__headline-bold">The Oven</span> {{ location.title }}</span></a>
+        <div class="card__address">
+          <a class="link" href="http://maps.google.com/?q={{ location.contact.address }}" target="_blank">{{ location.contact.address }}</a>
+        </div>
+        <div class="card__phone">
+          <a class="link" href="tel:+{{ location.contact.phone_href }}">{{ location.contact.phone }}</a>
+        </div>
+        <div class="card__hours card__hours--lunch">
+          <div class="card__hours__open-title">Lunch Hours</div>
+          {% for lunch in location.lunch_hours %}
+            <div class="card__hours__open-times">
+              <div class="card__hours__open-days">{{ lunch.days }}: {{ lunch.hours }}</div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="card__hours card__hours--dinner">
+          <div class="card__hours__open-title">Dinner Hours</div>
+          {% for dinner in location.dinner_hours %}
+            <div class="card__hours__open-times">
+              <div class="card__hours__open-days">{{ dinner.days }}: {{ dinner.hours }}</div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="card__links">
+          <div class="card__links__title">Menus</div>
+          <div class="card__links__wrapper">
+           {% for link in location.teaser_links %}
+              {% if link.link_external %}
+                <a class="link card__link" href="{{ link.link_url }}" target="_blank">{{ link.link_title }}</a>
+              {% else %}
+                <a class="link card__link" href="/{{ link.link_url }}">{{ link.link_title }}</a>
+              {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>

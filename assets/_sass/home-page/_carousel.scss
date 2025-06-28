@@ -1,0 +1,114 @@
+.home-carousel-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+  @include respond-to(tablet-portrait) {
+    flex-direction: column;
+  }
+  &__item {
+    width: 50%;
+    @include respond-to(tablet-portrait) {
+      width: 100%;
+    }
+  }
+}
+.home-carousel {
+  position: relative;
+  &__container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+  }
+  &__carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+  }
+  &__wrapper {
+    position: relative;
+    width: 100%;
+  }
+  &__slide {
+    margin: auto;
+    &__image {
+      margin: auto;
+      max-height: 450px;
+      max-width: 650px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        max-height: 450px;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+    &__content {
+      position: relative;
+      padding: 40px;
+      &__meta-title {
+
+      }
+      &__headline {
+        font-size: 80px;
+      }
+    }
+    &__headline {
+      @include responsive-font(2vw, $--step-up-1, 60px);
+      margin-bottom: 20px;
+      color: $color-white;
+    }
+  }
+  &__pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    z-index: 100;
+    .swiper-pagination-bullet {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 10px;
+      background: #e5e5e5;
+      opacity: 1.0;
+      @include respond-to(tablet-portrait) {
+        display: none;
+      }
+    }
+    .swiper-pagination-bullet-active {
+      background: #afafaf;
+    }
+  }
+}
+.home-carousel-section__callout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  @include respond-to(tablet-portrait) {
+    margin-top: 20px;
+  }
+}
+
+.home-carousel-section__callout__content__meta-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #8a868a;
+}
+.home-carousel-section__callout__content__headline {
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: 27px;
+  font-family: $font-heading;
+  @include respond-to(tablet-portrait) {
+    font-size: 65px;
+    margin-bottom: 15px;
+  }
+}
+.home-carousel-section__callout__content__description {
+  margin-bottom: 45px;
+}
