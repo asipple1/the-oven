@@ -33,9 +33,9 @@ dinner_hours:
   - days: Fri - Sat
     hours: 5:00 PM to 10:00 PM
 Lunch_menu_link_title: Download Lunch Menu
-lunch_menu_document_path: /uploads/lunch-menu-2023-3.pdf
+lunch_menu_document_path: /uploads/theovenlunchmenu-6-28-25-pdf.pdf
 dinner_menu_link_title: Download The Ovens Dinner Menu
-dinner_menu_document_path: /uploads/dinner-menu-2023-2.pdf
+dinner_menu_document_path: /uploads/theovendinnermenu-6-28-25.pdf
 wine_menu_link_title: Haymarket Cellar List
 wine_menu_document_path: https://dashboard.tastevinapp.com/restaurants/717/wines
 lunch_menu:
